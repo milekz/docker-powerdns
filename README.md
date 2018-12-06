@@ -1,4 +1,4 @@
-# PowerDNS Docker Container
+# PowerDNS Docker Container - POSTGRESQL READY
 
 [![Image Size](https://images.microbadger.com/badges/image/psitrax/powerdns.svg)](https://microbadger.com/images/psitrax/powerdns)
 [![Docker Stars](https://img.shields.io/docker/stars/psitrax/powerdns.svg)](https://hub.docker.com/r/psitrax/powerdns/)
@@ -6,8 +6,8 @@
 [![Docker Automated buil](https://img.shields.io/docker/automated/psitrax/powerdns.svg)](https://hub.docker.com/r/psitrax/powerdns/)
 
 * Small Alpine based Image
-* MySQL (default), Postgres, SQLight and Bind backend included
-* Automatic MySQL database initialization
+* Postgres (default), MySQL, SQLight and Bind backend included
+* #Automatic MySQL database initialization
 * Latest PowerDNS version (if not pls file an issue)
 * Guardian process enabled
 * Graceful shutdown using pdns_control
@@ -43,11 +43,11 @@ $ docker run --name pdns \
 
 **Environment Configuration:**
 
-* MySQL connection settings
-  * `MYSQL_HOST=mysql`
-  * `MYSQL_USER=root`
-  * `MYSQL_PASS=root`
-  * `MYSQL_DB=pdns`
+* POSTGRESQL connection settings
+  * `PGSQL_HOST=mysql`
+  * `PGSQL_USER=root`
+  * `PGSQL_PASS=root`
+  * `PGSQL_DB=pdns`
 * Want to disable mysql initialization? Use `MYSQL_AUTOCONF=false`
 * Want to use own config files? Mount a Volume to `/etc/pdns/conf.d` or simply overwrite `/etc/pdns/pdns.conf`
 
