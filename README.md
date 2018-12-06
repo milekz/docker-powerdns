@@ -22,11 +22,13 @@
 
 ```shell
 # Start a MySQL Container
-$ docker run -d \
-  --name pdns-mysql \
-  -e MYSQL_ROOT_PASSWORD=supersecret \
-  -v $PWD/mysql-data:/var/lib/mysql \
-  mariadb:10.1
+#$ docker run -d \
+#  --name pdns-mysql \
+#  -e MYSQL_ROOT_PASSWORD=supersecret \
+#  -v $PWD/mysql-data:/var/lib/mysql \
+#  mariadb:10.1
+
+use postgresql instead 
 
 $ docker run --name pdns \
   --link pdns-mysql:mysql \
