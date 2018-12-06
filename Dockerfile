@@ -5,12 +5,12 @@ MAINTAINER Christoph Wiechert <wio@psitrax.de>
 
 ENV REFRESHED_AT="2018-11-09" \
     POWERDNS_VERSION=4.1.5 \
-    MYSQL_AUTOCONF=true \
-    MYSQL_HOST="mysql" \
-    MYSQL_PORT="3306" \
-    MYSQL_USER="root" \
-    MYSQL_PASS="root" \
-    MYSQL_DB="pdns"
+    PGSQL_AUTOCONF=true \
+    PGSQL_HOST="postgres" \
+    PGSQL_PORT="5432" \
+    PGSQL_USER="postgres" \
+    PGSQL_PASS="root" \
+    PGSQL_DB="pdns"
 
 # alpine:3.8: mariadb-connector-c-dev
 
@@ -30,9 +30,10 @@ RUN apk --update add libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-c
     mv /tmp/libboost_program_options-mt.so* /usr/lib/ && \
     rm -rf /tmp/pdns-$POWERDNS_VERSION /var/cache/apk/*
 
-ADD schema.sql pdns.conf /etc/pdns/
-ADD entrypoint.sh /
+ADD schema.pgsql.sql /etc/pdns/
+COPY pg_pdns.conf /etc/pdns/pdns.conf
+ADD pg_entrypoint.sh /
 
 EXPOSE 53/tcp 53/udp
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/pg_entrypoint.sh"]
