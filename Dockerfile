@@ -1,10 +1,9 @@
 # Stick to libressl 2.6
 # https://github.com/PowerDNS/pdns/issues/6943
 FROM alpine:3.7
-MAINTAINER Christoph Wiechert <wio@psitrax.de>
 
-ENV REFRESHED_AT="2018-11-09" \
-    POWERDNS_VERSION=4.1.5 \
+ENV REFRESHED_AT="2018-12-27" \
+    POWERDNS_VERSION=4.0.6 \
     PGSQL_AUTOCONF=true \
     PGSQL_HOST="postgres" \
     PGSQL_PORT="5432" \
