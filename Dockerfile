@@ -30,6 +30,7 @@ RUN apk --update add libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-c
     rm -rf /tmp/pdns-$POWERDNS_VERSION /var/cache/apk/*
 
 ADD schema.pgsql.sql /etc/pdns/
+ADD schema.sqlite3.sql /etc/pdns/
 COPY pg_pdns.conf /etc/pdns/pdns.conf
 ADD pg_entrypoint.sh /
 
