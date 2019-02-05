@@ -3,7 +3,7 @@
 FROM alpine:3.7
 
 ENV REFRESHED_AT="2018-12-27" \
-    POWERDNS_VERSION=4.0.6 \
+    POWERDNS_VERSION=4.1.6 \
     PGSQL_AUTOCONF=true \
     PGSQL_HOST="postgres" \
     PGSQL_PORT="5432" \
