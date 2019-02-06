@@ -11,7 +11,7 @@ if $PGSQL_AUTOCONF ; then
       PGSQL_PORT=5432
   fi
   # Set POSTGRESQL Credentials in pdns.conf
-  sed -r -i "s/^[# ]*launch=gpgsq.*/launch=gpgsql/g" /etc/pdns/pdns.conf
+  sed -r -i "s/^[# ]*launch=.*/launch=gpgsql/g" /etc/pdns/pdns.conf
   sed -r -i "s/^[# ]*gpgsql-host=.*/gpgsql-host=${PGSQL_HOST}/g" /etc/pdns/pdns.conf
   sed -r -i "s/^[# ]*gpgsql-port=.*/gpgsql-port=${PGSQL_PORT}/g" /etc/pdns/pdns.conf
   sed -r -i "s/^[# ]*gpgsql-user=.*/gpgsql-user=${PGSQL_USER}/g" /etc/pdns/pdns.conf
