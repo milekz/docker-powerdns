@@ -9,7 +9,7 @@ ENV REFRESHED_AT="2018-12-27" \
     PGSQL_PORT="5432" \
     PGSQL_USER="postgres" \
     PGSQL_PASS="root" \
-    PGSQL_DB="pdns"
+    PGSQL_DB="pdns" 
 
 # alpine:3.8: mariadb-connector-c-dev
 
