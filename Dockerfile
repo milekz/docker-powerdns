@@ -1,8 +1,6 @@
-# Stick to libressl 2.6
-# https://github.com/PowerDNS/pdns/issues/6943
-FROM alpine:3.7
+FROM alpine
 
-ENV REFRESHED_AT="2018-12-27" \
+ENV REFRESHED_AT="2019-06-24" \
     POWERDNS_VERSION=4.1.9 \
     PGSQL_AUTOCONF=true \
     PGSQL_HOST="postgres" \
@@ -10,10 +8,8 @@ ENV REFRESHED_AT="2018-12-27" \
     PGSQL_USER="postgres" \
     PGSQL_PASS="root" \
     PGSQL_DB="pdns" 
- 
-# alpine:3.8: mariadb-connector-c-dev
 
-RUN apk --update add libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-client-libs postgresql-client && \
+RUN apk --update add libpq sqlite-libs libstdc++ libgcc mariadb-connector-c-dev mariadb-connector-c postgresql-client && \
     apk add --virtual build-deps \
       g++ make mariadb-dev postgresql-dev sqlite-dev curl boost-dev && \
     curl -sSL https://downloads.powerdns.com/releases/pdns-$POWERDNS_VERSION.tar.bz2 | tar xj -C /tmp && \
