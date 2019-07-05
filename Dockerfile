@@ -34,6 +34,6 @@ ADD schema.sqlite3.sql /etc/pdns/
 COPY pg_pdns.conf /etc/pdns/pdns.conf
 ADD pg_entrypoint.sh /
 
-EXPOSE 53/tcp 53/udp
+EXPOSE 53/tcp 53/udp 8081/tcp
 
 ENTRYPOINT ["/pg_entrypoint.sh"]
