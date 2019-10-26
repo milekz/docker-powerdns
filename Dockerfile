@@ -3,7 +3,7 @@
 FROM alpine
 MAINTAINER Milosz Szewczak <milek@milek.eu>
 
-ENV REFRESHED_AT="2018-12-27" \
+ENV REFRESHED_AT="2019-10-26" \
     POWERDNS_VERSION=4.2.0 \
     PGSQL_AUTOCONF=true \
     PGSQL_HOST="postgres" \
