@@ -2,8 +2,8 @@
 # https://github.com/PowerDNS/pdns/issues/6943
 FROM alpine:3.7
 
-ENV REFRESHED_AT="2018-12-27" \
-    POWERDNS_VERSION=4.1.9 \
+ENV REFRESHED_AT="2019-10-26" \
+    POWERDNS_VERSION=4.2.0 \
     PGSQL_AUTOCONF=true \
     PGSQL_HOST="postgres" \
     PGSQL_PORT="5432" \
