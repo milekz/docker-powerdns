@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.9
 
 ENV REFRESHED_AT="2019-11-15" \
     POWERDNS_VERSION=4.2.0 \
